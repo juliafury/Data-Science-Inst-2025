@@ -1,0 +1,26 @@
+{
+    "id": "0CE902F9",
+    "path": "~/Data-Science-Inst-2025/anes_proj.R",
+    "project_path": null,
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": true,
+    "created": 1736535671974.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "63,43",
+        "scrollLine": "45"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1736547743,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1736552966113,
+    "read_only": false,
+    "read_only_alternatives": []
+}
