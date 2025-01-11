@@ -20,8 +20,6 @@ anes_data$white_adv <- white_adv
 anes_data_clean <- anes_data %>%
   filter(!is.na(vote2016) & !is.na(white_adv))
 
-# Graphing responses re: white advantage/disadvantage
-# scale: 1 = "large advantage", 4 = "it does not make any difference", 7 = "large disadvantage"
 ggplot(anes_data_clean, aes(x = factor(white_adv, exclude = NULL))) +
   geom_bar(fill = "darkgreen") +
   labs(
@@ -31,7 +29,6 @@ ggplot(anes_data_clean, aes(x = factor(white_adv, exclude = NULL))) +
   ) +
   theme_minimal()
 
-# Relationship between 2016 Vote and Views on Racial Advantage/Disadvantage
 ggplot(anes_data_clean, aes(x = factor(white_adv), fill = factor(vote2016))) +
   geom_bar() +
   labs(
@@ -42,13 +39,15 @@ ggplot(anes_data_clean, aes(x = factor(white_adv), fill = factor(vote2016))) +
   ) +
   theme_minimal()
 
-warm_do <- anes_data$warmdo
-warm_do <- ifelse(warm_do == 9, NA, warm_do)
+warmdo <- anes_data$warmdo
 
-# scale: 1 = fed gov should be doing a great deal more, 4 = is doing the right
-# amount, 7 = should be doing a great deal less
+anes_data$vote2016 <- vote2016
+anes_data$warm_do <- warmdo
 
-ggplot(anes_data, aes(x = factor(warm_do), fill = factor(vote2016))) +
+anes_data_clean <- anes_data %>%
+  filter(!is.na(vote2016) & !is.na(warmdo))
+
+ggplot(anes_data_clean, aes(x = factor(warmdo), fill = factor(vote2016))) +  # Use 'anes_data_clean' here
   geom_bar() +
   labs(
     title = "Relationship between 2016 Vote and Views on Global Warming and the Federal Government",
@@ -57,10 +56,6 @@ ggplot(anes_data, aes(x = factor(warm_do), fill = factor(vote2016))) +
     fill = "Vote in 2016"
   ) +
   theme_minimal()
-
-pdf(here("figs", "white_adv_plot.pdf"))
-ggplot(anes_data, aes(x, y_sq)) + geom_point() + geom_smooth()
-dev.off()
 
 immig_numb <- factor(anes_data$immig_numb, 
                      levels = c(1, 4, 7), 
