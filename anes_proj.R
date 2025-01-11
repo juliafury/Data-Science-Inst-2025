@@ -76,7 +76,7 @@ economy <- anes_data$econnow
 ggplot(anes_data, aes(x = factor(economy), fill = factor(vote2016))) +
   geom_bar() +
   labs(
-    title = "Relationship between 2016 vote and views on Economy",
+    title = "Relationship between 2016 Vote and Views on Economy",
     x = "Economy compared to one year ago",
     y = "Count",
     fill = "Vote in 2016"

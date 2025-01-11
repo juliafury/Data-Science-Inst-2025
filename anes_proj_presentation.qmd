@@ -1,0 +1,82 @@
+---
+title: | 
+    | Investigating Predictors of 2016 Presidential Voting Behavior
+author: "Julia Fury, Jeffrie Chambers, Meera Swaminathan"
+date: today
+date-format: iso
+execute: 
+  echo: true
+format: 
+  beamer:
+    fonttheme: serif
+    include-in-header:
+      - text: | 
+          \usepackage{wasysym} 
+          \setbeamertemplate{footline}[page number]
+      - file: zzz_beamer_header.tex
+    section-titles: true
+    toc: true
+institute:
+  - American University
+  - Data Science Inst 2025
+# bibliography: "main.bib"
+---
+
+```{r}
+#| label: setup
+#| echo: false
+#| message: false
+#| results: false
+#| warning: false
+
+library(here)
+library(tidyverse)
+```
+
+# Introduction
+
+## Our Research Question and the ANES 2016 Pilot Study
+
+- The ANES 2016 Pilot Study surveyed 1200 respondents on a wide range of topics.
+- Responses were collected from January 22th, 2016 through January 28th, 2016.
+- Our research question investigates the relationships between survey respondents'
+positions on certain social/political topics and their reported candidates of
+choice in the 2016 Presidential election.
+
+Material.
+
+<!-- Include a PDF/PNG/... -->
+<!-- ![](figs/myfig.pdf){fig-align="center" height=80%} -->
+
+<!-- Include PDFs in columns -->
+<!-- \includegraphics[width=2in]{figs/myfig1.pdf} -->
+<!-- \includegraphics[width=2in]{figs/myfig2.pdf} -->
+
+***
+
+\huge
+
+\begin{center}
+Thanks! 
+\end{center}
+
+\vspace{5mm}
+
+\large
+
+\center
+`jf9785a@american.edu`
+
+`ms2691a@american.edu`
+
+`jc8400a@american.edu`
+
+\quad
+
+\vspace{5mm}
+_Journal of Public Policy_  
+\hspace{3.5cm} @mooganmin22
+
+## References {.allowframebreaks}
+
+\footnotesize
