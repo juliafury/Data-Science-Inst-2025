@@ -1,7 +1,10 @@
 library(here)
 library(tidyverse)
-library(dplyr)
-library(ggplot2)
+library(stargazer)
+# Please cite as: 
+
+# `Hlavac, Marek (2022). stargazer: Well-Formatted Regression and Summary Statistics Tables.`
+# `R package version 5.2.3. https://CRAN.R-project.org/package=stargazer `
 
 anes_data <- read_csv(here("data", "anes_pilot_2016.csv"))
 
@@ -10,6 +13,16 @@ vote2016 <- ifelse(vote2016 == 9, NA, vote2016)
 vote2016 <- factor(vote2016, 
                    levels = c(1, 2, 3, 4),
                    labels = c("Clinton", "Trump", "Someone Else", "Probably Not Voting"))
+
+vote2016_binary <- case_when(
+  vote2016 == "Clinton" ~ 0,
+  vote2016 == "Trump" ~ 1,
+  .default = NA
+)
+
+# logistic regression
+
+
 
 white_adv <- anes_data$wad4b
 white_adv <- ifelse(white_adv == 9, NA, white_adv)
@@ -41,6 +54,13 @@ ggplot(anes_data_clean, aes(x = factor(white_adv), fill = factor(vote2016))) +
   theme_minimal()
 dev.off()
 
+lm()
+model1 <- lm(vote2016_binary ~ white_adv, data = anes_data)
+model1
+
+lm_out <- lm(vote2016_binary ~ white_adv)
+glm_out <- glm(vote2016_binary ~ x1 + x2)
+
 warmdo <- anes_data$warmdo
 
 anes_data_clean <- anes_data %>%
@@ -68,6 +88,9 @@ ggplot(anes_data_clean, aes(x = factor(warmdo), fill = factor(vote2016))) +
   theme_minimal()
 dev.off()
 
+model2 <- lm(vote2016_binary ~ warmdo, data = anes_data)
+model2
+
 immig_numb <- anes_data$immig_numb
 
 anes_data_clean <- anes_data %>%
@@ -94,6 +117,9 @@ ggplot(anes_data_clean, aes(x = factor(immig_numb), fill = factor(vote2016))) +
   theme_minimal()
 dev.off()
 
+model3 <- lm(vote2016_binary ~ immig_numb, data = anes_data)
+model3
+
 econnow <- anes_data$econnow
 
 anes_data_clean <- anes_data %>%
@@ -119,5 +145,44 @@ ggplot(anes_data_clean, aes(x = factor(econnow), fill = factor(vote2016))) +
   ) +
   theme_minimal()
 dev.off()
+
+model4 <- lm(vote2016_binary ~ econnow, data = anes_data)
+model4
+
+model5 <- glm(vote2016_binary ~ white_adv + warmdo + immig_numb + econnow, 
+             data = anes_data, 
+             family = "binomial")
+model5
+stargazer(model1, model5)
+
+model1 <- glm(vote2016_binary ~ white_adv, data = anes_data, family = "binomial")
+model2 <- glm(vote2016_binary ~ warmdo, data = anes_data, family = "binomial")
+model3 <- glm(vote2016_binary ~ immig_numb, data = anes_data, family = "binomial")
+model4 <- glm(vote2016_binary ~ econnow, data = anes_data, family = "binomial")
+
+model_all <- glm(vote2016_binary ~ white_adv + warmdo + immig_numb + econnow, 
+                 data = anes_data, 
+                 family = binomial(link = "logit"))
+
+stargazer(model1, model2, model3, model4, model_all, type = "text", 
+          title = "Regression Results for Political Variables")
+
+predict(model_all, newdata = c(1, 1, 1, 1))
+
+pred_data = anes_data |> select(white_adv, warmdo, immig_numb, econnow)
+
+all_vote_preds <- predict(model_all, pred_data, type = "response")
+df <- tibble(vote2016_binary, all_vote_preds)
+df_complete <- na.omit(df)
+binary_preds <- ifelse(df_complete$all_vote_preds > 0.5, 1, 0)
+num_correct_preds <- sum(binary_preds == df_complete$vote2016_binary)
+num_total_preds <- nrow(df_complete)
+pct_correct <- num_correct_preds / num_total_preds
+# expand.grid
+
+indivs_example <- tibble(white_adv = c(4, 4), warmdo = c(1, 4), immig_numb = c(4, 4),
+ econnow = c(3, 3))
+
+indivs_pred <- predict(model_all, indiv_pred, type = "response")
 
 
