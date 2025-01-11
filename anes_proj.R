@@ -72,4 +72,13 @@ ggplot(data = data.frame(immig_numb), aes(x = immig_numb)) +
        x = "Should immigration numbers be increased, decreased, or kept the same", 
        y = "Count of Respondents")
 
-
+economy <- anes_data$econnow
+ggplot(anes_data, aes(x = factor(economy), fill = factor(vote2016))) +
+  geom_bar() +
+  labs(
+    title = "Relationship between 2016 vote and views on Economy",
+    x = "Economy compared to one year ago",
+    y = "Count",
+    fill = "Vote in 2016"
+  ) +
+  theme_minimal()
