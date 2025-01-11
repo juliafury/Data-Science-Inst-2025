@@ -62,6 +62,28 @@ In order to prepare the "The Federal Government Should Be Doing More/less about 
 
 anes_data_clean <- anes_data %>%
   filter(!is.na(vote2016) & !is.na(warmdo)) This command excludes NA variables from our data.
+  
+   Compared to other groups, white people generally have an advantage/disadvantage 
+ 
+ In order to prepare the "Compared to other groups, white people generally have an advantage/disadvantage " data for visualization, we extract the variable using "white_adv <- anes_data$wad4b", handle the missing values using "white_adv <- ifelse(white_adv == 9, NA, white_adv)", add clean variables to the data set using:
+
+"anes_data$vote2016 <- vote2016
+anes_data$white_adv <- white_adv".
+
+Then, we filter the data using:
+
+anes_data_clean <- anes_data %>%
+  filter(!is.na(vote2016) & !is.na(white_adv)).
+
+Increased/decreased the number of people allowed to legally move to the United States 
+
+In order to prepare the "Increased/decreased the number of people allowed to legally move to the United States " data for visualization, we extract the variable using "immig_numb <- anes_data$immig_numb" and we filter the data using: 
+
+anes_data_clean <- anes_data %>%
+  filter(!is.na(vote2016) & !is.na(immig_numb)).
+  
+Graphing Each Variable  
+
 
 ## 4 Results and Analysis
 
