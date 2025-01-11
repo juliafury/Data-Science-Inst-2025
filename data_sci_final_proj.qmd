@@ -32,7 +32,7 @@ Trump can attribute his win in 2016 to many complex issues, and differing belief
 
 ## 3 Data and Methods
 
-We utilize data from the ANES 2016 Pilot Study which had a survey of 1,200 respondents between January 22 and 28, 2016. From this data we identified four variables that we hypothesize will demonstrate a correlation between a voter position on social/political issues and their preferred candidate and cleaned and graphed using R Studio to reflect the data of just the responses and the data of their responses with who they voted for. These variables include: Perception of the economy at the time of the survey compared to a year prior, opinion about the federal government's role in addressing climate change, perception of radical advantage or disadvantage held by white people, and opinion on immigration numbers.
+We utilize data from the ANES 2016 Pilot Study which had a survey of 1,200 respondents between January 22 and 28, 2016. From this data we identified four variables that we hypothesize will demonstrate a correlation between a voter position on social/political issues and their preferred candidate and cleaned and graphed using R Studio to reflect the data of just the responses and the data of their responses with who they voted for. These variables include: Perception of the economy at the time of the survey compared to a year prior, opinion about the federal government's role in addressing climate change, perception of radical advantage or disadvantage held by white people, and opinion on immigration numbers.The unit of analysis refers to the individual respondent, the primary outcome of interest is the vote, and key predictors are the responses to economic perceptions, immigration, global warming, and racial advantages. 
 
 Setting up the R Environment and Data Processing
 
@@ -82,12 +82,14 @@ In order to prepare the "Increased/decreased the number of people allowed to leg
 anes_data_clean <- anes_data %>%
   filter(!is.na(vote2016) & !is.na(immig_numb)).
   
-Graphing Each Variable  
+Graphing and Modeling the Variables 
+
+We use bar charts and stacked bar charts using ggplot2 and geom_bar to visualize our data. The bar charts examined the distribution of reponses and the stacked bar chats visualized their relationships with their 2016 vote choice. We also use generalized linear model function for logistic regression of the variables. 
 
 
 ## 4 Results and Analysis
 
-![](figs/econ_opin.pdf){width="75%" align="center"}
+![](figs/econ_opin.pdf){width="57%" align="center"}
 
 ![](figs/gov_warming.pdf){width="75%" align="center"}
 
