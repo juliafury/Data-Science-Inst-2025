@@ -6,12 +6,12 @@ editor: visual
 ---
 
 #### Abstract
-P
+
 ## 1 Introduction
 
-The United States' political environment has proven to be increasingly complicated with many Americans experiencing conflicting ideologies, and diverse perspectives. Elections are at the core of rising political tension in the United States and being able to understand how Americans feel about critical issues and predict who they vote for interprets voter behavior, reveals divisive issues, evaluates democracy, and anticipates future trends which are important for managing the polarized political environment in the United States. 
+The United States' political environment has proven to be increasingly complicated with many Americans experiencing conflicting ideologies, and diverse perspectives. Elections are at the core of rising political tension in the United States and being able to understand how Americans feel about critical issues and predict who they vote for interprets voter behavior, reveals divisive issues, evaluates democracy, and anticipates future trends which are important for managing the polarized political environment in the United States.
 
-In this paper we will investigate the correlation between voter's positions on social/political topics and their preferred candidate by focusing on the 2016 Presidential Election by using the the ANES 2016 Pilot Study which surveyed 1,200 respondents on several issues. The study was conducted online from January 22nd, 2016 to January 28th, 2016 and is a valuable resource for investigating correlations. 
+In this paper we will investigate the correlation between voter's positions on social/political topics and their preferred candidate by focusing on the 2016 Presidential Election by using the the ANES 2016 Pilot Study which surveyed 1,200 respondents on several issues. The study was conducted online from January 22nd, 2016 to January 28th, 2016 and is a valuable resource for investigating correlations.
 
 ## 2 Background
 
@@ -26,6 +26,12 @@ In this paper we will investigate the correlation between voter's positions on s
 ![](figs/racial_adv.pdf){width="75%" align="center"}
 
 ![](figs/immig_opin.pdf){width="75%" align="center"}
+
+We can also use our findings to predict an individual's candidate choice based on their responses to the questions. To do this, we can use a binary representation of possible candidate choices (with 0 representing a vote for Clinton and 1 representing a vote for Trump, and ignoring other responses for the purposes of this analysis) and use statistical methods to generate a value between 0 and 1 for any combination of responses to the four questions. A reasonable threshold to use for this prediction would be 0.5, meaning that if a respondent is assigned a value below 0.5 based on their responses they would be expected to vote for Clinton, and if they receive a value above 0.5 they would be expected to vote for Trump.
+
+We were curious about this predictive method's accuracy when tested on the ANES respondents' data. To investigate this, we selected the 187 survey respondents who had answered all four political opinion questions as well as their candidate choice, and generated predictive values for them based on their political opinion responses. We then compared their predicted candidate choices (determined by whether their values were above or below 0.5) with their true reported candidate choices. Our predictions were correct for 83.42% of the 187 respondents.
+
+Our findings also allow us to investigate the expected difference in candidate choice for individuals with specific combinations of political opinions. For example, if we compare a hypothetical individual who chooses the neutral options for all four questions (ratings of 4, 4, 4, and 3 for the questions about race, climate, immigration, and economy respectively) with an individual who chooses all of the neutral options with the exception of climate change (ratings of 4, 1, 4, and 3), we find that the predictions generated for these two individuals are 0.6902750 and 0.4039629 respectively. The significant difference between these values suggests that environmental concerns can have a large impact on the candidate choice of a voter who is otherwise neutral on the topics of economy, race, and immigration. (Namely, the individual who believes strongly in the need for the government to do more to address climate change is expected to be much more likely to vote for Clinton in this situation.)
 
 ## 5 Discussion
 
