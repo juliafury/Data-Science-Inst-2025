@@ -15,6 +15,14 @@ editor: visual
 
 ## 4 Results and Analysis
 
+![](figs/econ_opin.pdf){width=57% align="center"}
+
+![](figs/gov_warming.pdf){width=75% align="center"}
+
+![](figs/racial_adv.pdf){width=75% align="center"}
+
+![](figs/immig_opin.pdf){width=75% align="center"}
+
 ## 5 Discussion
 
 ## References
