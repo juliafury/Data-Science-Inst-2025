@@ -1,11 +1,16 @@
 ---
 title: "SPA-420 Final Project"
+authors: Jeffrie Chambers IV, Julia Fury, Meera Swaminathan
 date: 2025-01-10
 format: pdf
 editor: visual
 ---
 
 #### Abstract
+
+The 2016 U.S. presidential election was marked by an extreme significance in how it became the turning point of American politics. With GOP candidate Donald Trump’s victory over Hillary Clinton, Trump’s victory became an essential point in history that will be known for how it reshaped American politics, discourse, and voter attitudes and behavior. This paper utilizes four main data variables from the ANES 2016 Pilot Study to analyze economic, environmental, immigration, and racial advantages. The key findings within the paper highlight the importance of Trump’s “America First” agenda, and how it resonated deeply in the core of his supporters. Cultural issues, such as immigration and national security, also played a central role, with Trump’s rhetoric and policies appealing to voters seeking a return to traditional values.
+
+The analysis reflects broader on the context of the election, utilizing both past actions of the US government. With some understanding of how the post-Trump US government operates, we can see a progression and some dissatisfaction among voters. Trump’s outsider status and ability to channel frustrations into a compelling campaign narrative distinguished him from Clinton, a long-time political figure and former first lady. As political polarization continues to define America, the insights from 2016 remain vital for understanding the challenges of future elections and the evolving dynamics of voter behavior.
 
 ## 1 Introduction
 
@@ -14,6 +19,16 @@ The United States' political environment has proven to be increasingly complicat
 In this paper we will investigate the correlation between voters' positions on social/political topics and their preferred candidates by focusing on the 2016 Presidential Election by using the the ANES 2016 Pilot Study which surveyed 1,200 respondents on several issues. The study was conducted online from January 22nd, 2016 to January 28th, 2016 and is a valuable resource for investigating correlations.
 
 ## 2 Background
+
+Every four calendar years in the United States, an election is held for the Chief Executive role of President. These elections invite a host of candidates from many different parties. Still, mainly the candidates from the Democratic and Republican parties are the ones who receive not only the top press but have the top name recognition among voters. In the 2016 election, we know that Hillary Clinton was the Democratic candidate, and Donald Trump represented the Republican party as a candidate. This election marked a significant shift in political discourse and voter behavior, with the GOP’s Donald Trump securing a surprise victory, shifting how politics is discussed for the foreseeable future.
+
+Many factors can be seen as the reasons why any individual would have voted for Donald Trump over Hillary Clinton and vice versa. The most interesting part that political and data scientists can see is that this election sheds light on the evolution of political alignments and voter preferences, sometimes a bit more than in elections prior. This paper utilizes the ANES 2016 Pilot study to examine some predictors that might have influenced a vote for Trump over Clinton. This analysis focuses on using economic, demographic, and environmental variables that might have influenced voter decisions.
+
+The economic state of the country held significant importance for both Trump and Clinton supporters. As the 2016 election signaled the end of the Obama Administration, many Clinton supporters emphasized the progress made during Obama’s tenure, particularly considering the 2008 Financial Crisis that Obama spent his first term recovering from. Conversely, many Trump supporters underscored the economic growth that was necessary but not achieved under Obama. These sentiments were particularly evident in the Midwest states of Michigan and Wisconsin, as well as in crucial swing states like Pennsylvania and Georgia. Trump’s economic agenda centered around “America First” policies and his critical stance on the North American Free Trade Agreement (NAFTA), resonated with voters who felt disenfranchised due to unemployment and rising economic challenges. (Sawhill)
+
+Many cultural issues, such as immigration, religion, and emotional issues, became a significant conversation during the 2016 presidential election. While both candidates were highly critical of immigration, particularly illegal immigration, Trump brought a hard stance on immigration and national security. His proposal included an attempt to build a border wall on the southern border with Mexico, coupled with planned deportation strategies and a complete ban on incoming flights from certain countries, resonated deeply with his base, who overwhelmingly supported his advocated ideas. Trump’s main campaign slogan, “Make America Great Again,” resonated with his base and became a cultural rallying cry for them. (Hawley)
+
+Trump can attribute his win in 2016 to many complex issues, and differing beliefs among the American people. The complex back-and-forth of economic complaints, cultural concerns, political sentiments, and strategic communication. These factors not only explain why specific groups of voters supported him but also highlight the evolving nature of American political behavior and the enduring impact of the 2016 election on the nation's political landscape.
 
 ## 3 Data and Methods
 
@@ -35,4 +50,18 @@ Our findings also allow us to investigate the expected difference in candidate c
 
 ## 5 Discussion
 
+This paper’s main goal was to find an understanding of why voters would have chosen to vote for Donald Trump over Hillary Clinton. Through our analysis of economic, environmental, racial, and immigration issues, our results provide some insight into what motivations specific voters would have had to vote for Trump. Utilizing the 2016 ANES Pilot Study allowed us to receive some viable information about what voters’ beliefs and top issues were going into the 2016 election versus in a post-outcome like we would have seen in the follow-up 2016 Time series study.
+
+While the primary goal of this paper is to understand why voters voted the way they did, it is important to understand and reflect upon the broader context that came with the 2016 election. The end of the Obama Administration left some with a feeling of home and growth, while for others it became a turning point in the ideals of America for many other voters. Voters in the Clinton camp primarily came with an understanding of the progress that the country had achieved under Obama and hoped to see more progress being made as not only the first woman president but also as a picture of where the country could go in the years to come. On the other hand, Trump’s camp was widely marked with dissatisfaction with the work under President Obama, and a highlight of the shortcomings of President Obama became a key point, especially as Trump touted his plan to repeal the Affordable Care Act, a program which became widely known as “Obamacare”.
+
+The divide in supporters of both candidates highlighted a divide and a growing polarization in the US, polarization so strong that it became instrumental in the shaping of politics and the political arguments that began to be made. Trump was able to position himself as an “outsider” to politics, an argument that Hillary Clinton, former First Lady, Senator, and Secretary of State, couldn’t argue a response to. His appeal to white males, those who weren’t college educated, and in many places young voters who were disillusioned with the traditional politics and the political elites of America.
+
+Ultimately, our analysis highlights a strong understanding of the complexities of a voter and their decision-making abilities. No one issue made Trump the victor over Hillary, but a combination of factors, including his ability to channel frustrations into a compelling narrative. As the political landscape continues to evolve, the lessons of 2016 remain relevant for understanding the dynamics of American democracy and the challenges facing both policymakers and political candidates in future elections.
+
 ## References
+
+Hawley, G. (2019, July 24). *Ambivalent nativism: Trump supporters’ attitudes toward Islam and Muslim immigration*. Brookings. https://www.brookings.edu/articles/ambivalent-nativism-trump-supporters-attitudes-toward-islam-and-muslim-immigration/
+
+Sawhill, I. V. (2016, December 6). *Donald Trump’s election: Was it economics or culture?* Brookings. https://www.brookings.edu/articles/donald-trumps-election-was-it-economics-or-culture/)(
+
+Hlavac, Marek (2022). stargazer: Well-Formatted Regression and Summary Statistics Tables. R package version 5.2.3. https://CRAN.R-project. org/package=stargazer
