@@ -6,8 +6,12 @@ editor: visual
 ---
 
 #### Abstract
-
+P
 ## 1 Introduction
+
+The United States' political environment has proven to be increasingly complicated with many Americans experiencing conflicting ideologies, and diverse perspectives. Elections are at the core of rising political tension in the United States and being able to understand how Americans feel about critical issues and predict who they vote for interprets voter behavior, reveals divisive issues, evaluates democracy, and anticipates future trends which are important for managing the polarized political environment in the United States. 
+
+In this paper we will investigate the correlation between voter's positions on social/political topics and their preferred candidate by focusing on the 2016 Presidential Election by using the the ANES 2016 Pilot Study which surveyed 1,200 respondents on several issues. The study was conducted online from January 22nd, 2016 to January 28th, 2016 and is a valuable resource for investigating correlations. 
 
 ## 2 Background
 
@@ -15,13 +19,13 @@ editor: visual
 
 ## 4 Results and Analysis
 
-![](figs/econ_opin.pdf){width=57% align="center"}
+![](figs/econ_opin.pdf){width="57%" align="center"}
 
-![](figs/gov_warming.pdf){width=75% align="center"}
+![](figs/gov_warming.pdf){width="75%" align="center"}
 
-![](figs/racial_adv.pdf){width=75% align="center"}
+![](figs/racial_adv.pdf){width="75%" align="center"}
 
-![](figs/immig_opin.pdf){width=75% align="center"}
+![](figs/immig_opin.pdf){width="75%" align="center"}
 
 ## 5 Discussion
 
