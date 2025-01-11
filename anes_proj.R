@@ -59,4 +59,17 @@ pdf(here("figs", "white_adv_plot.pdf"))
 ggplot(anes_data, aes(x, y_sq)) + geom_point() + geom_smooth()
 dev.off()
 
+immig_numb <- factor(anes_data$immig_numb, 
+                     levels = c(1, 4, 7), 
+                     labels = c("Increased a lot", "Kept the same", "Decreased a lot"))
+immig_numb <- na.omit(immig_numb)
+
+library(ggplot2)
+
+ggplot(data = data.frame(immig_numb), aes(x = immig_numb)) +
+  geom_bar(fill = "red") + 
+  labs(title = "Public Opinion Immigration Numbers (2016)", 
+       x = "Should immigration numbers be increased, decreased, or kept the same", 
+       y = "Count of Respondents")
+
 
