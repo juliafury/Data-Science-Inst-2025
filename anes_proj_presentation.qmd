@@ -1,0 +1,127 @@
+---
+title: | 
+    | Investigating Predictors of 2016 Presidential Voting Behavior
+author: "Julia Fury, Jeffrie Chambers, Meera Swaminathan"
+date: today
+date-format: iso
+execute: 
+  echo: true
+format: 
+  beamer:
+    fonttheme: serif
+    include-in-header:
+      - text: | 
+          \usepackage{wasysym} 
+          \setbeamertemplate{footline}[page number]
+      - file: zzz_beamer_header.tex
+    section-titles: true
+    toc: true
+institute:
+  - American University
+  - Data Science Inst 2025
+# bibliography: "main.bib"
+---
+
+```{r}
+#| label: setup
+#| echo: false
+#| message: false
+#| results: false
+#| warning: false
+
+library(here)
+library(tidyverse)
+```
+
+# Introduction
+
+## Our Research Question and the ANES 2016 Pilot Study
+
+- The ANES 2016 Pilot Study surveyed 1200 respondents on a wide range of topics.
+- Responses were collected online from January 22th, 2016 through January 28th, 2016 by the American National Election Studies (ANES).
+- Our research question investigates the relationships between survey respondents' positions on certain social/political topics and their reported candidates of choice in the 2016 Presidential election.
+
+<!-- Include a PDF/PNG/... -->
+<!-- ![](figs/myfig.pdf){fig-align="center" height=80%} -->
+
+<!-- Include PDFs in columns -->
+<!-- \includegraphics[width=2in]{figs/myfig1.pdf} -->
+<!-- \includegraphics[width=2in]{figs/myfig2.pdf} -->
+
+***
+
+## Variables We Examined
+
+The central variable in our analysis was the respondents' candidates of choice for the 2016 Presidential election. Respondents' answers to this question were analyzed alongside the four other variables we tracked:
+- Perception of the economy at the time of the survey compared to a year prior
+- Opinion about the federal government's role in addressing climate change
+- Perception of racial advantage or disadvantage held by white people
+- Opinion on immigration numbers
+While there were many variables related to respondents' economic, environmental, racial, and immigration-related positions, we chose to graph one variable from each category that seemed the most representative.
+
+***
+
+# Respondents' Views on the Economy Compared to a Year Earlier
+
+In this analysis, we sought to understand how respondents' views on the economy were related to their candidates of choice in the 2016 election.
+
+![](figs/econ_opin.pdf){width=57% align="center"}
+
+***
+
+# Respondents' Views on the Federal Government's Responsibility to Address Global Warming
+
+In this analysis, we sought to understand how respondents' views on the federal government's responsibility to address global warming were related to their candidates of choice in the 2016 election. We generated a figure graphing voters' responses in which they were asked to describe their opinions on the issue on a scale of 1 to 7, with 1 meaning the government "should be doing a great deal more" regarding climate change, 4 meaning "is doing the right amount," and 7 meaning "should be doing a great deal less."
+
+***
+
+![](figs/gov_warming.pdf){width=75% align="center"}
+
+***
+
+# Perception of Racial Advantages/Disadvantages Held by White People
+
+In this analysis, we sought to understand how the perception of racial advantages or disadvantages a white voter's candidate of choice in 2016. Respondents were asked to represent their opinion using a scale of 1 to 7, with 1 meaning white people generally have a "large advantage" compared to other groups, 4 meaning "it does not make any difference," and 7 meaning white people are at a "large disadvantage" compared to other groups.
+
+***
+
+![](figs/racial_adv.pdf){width=75% align="center"}
+
+***
+
+# Respondents' Views on Immigration Numbers
+
+In this analysis, we sought to understand how respondents' views on immigration numbers were linked to their candidates of choice in the 2016 election. Respondents were asked to express their opinions on a scale of 1 to 7, with 1 meaning the number of legal immigrants allowed into the United States should be "increased a lot," 4 meaning "kept the same," and 7 meaning "decreased a lot."
+
+***
+
+![](figs/immig_opin.pdf){width=75% align="center"}
+
+***
+
+\huge
+
+\begin{center}
+Thanks! 
+\end{center}
+
+\vspace{5mm}
+
+\large
+
+\center
+`jf9785a@american.edu`
+
+`ms2691a@american.edu`
+
+`jc8400a@american.edu`
+
+\quad
+
+\vspace{5mm}
+_Journal of Public Policy_  
+\hspace{3.5cm} @mooganmin22
+
+## References {.allowframebreaks}
+
+\footnotesize

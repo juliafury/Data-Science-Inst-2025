@@ -2,8 +2,8 @@
     "sortOrder": [
         {
             "columnIndex": 2,
-            "ascending": false
+            "ascending": true
         }
     ],
-    "path": "~/Data-Science-Inst-2025/data"
+    "path": "~/Data-Science-Inst-2025"
 }
