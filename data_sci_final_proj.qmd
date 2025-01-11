@@ -1,7 +1,7 @@
 ---
 title: "Investigating Predictors of 2016 Presidential Voting Behavior"
 authors: Jeffrie Chambers IV, Julia Fury, Meera Swaminathan
-date: 2025-01-10
+date: 2025-01-11
 format: pdf
 editor: visual
 ---
@@ -93,19 +93,27 @@ One relationship we sought to analyze was the connection between respondents' vi
 
 ![](figs/econ_opin.pdf){width="75%" align="center"}
 
+The graph shows a tendency for voters who were happy with the state of the economy (compared to a year earlier) to favor Clinton, while voters who were unhappy with the state of the economy favored Trump.
+
 We also explored how respondents' views on the federal government's responsibility to address global warming were related to their candidates of choice. The figure below graphs voters' responses in which they were asked to describe their opinions on the issue on a scale of 1 to 7, with 1 meaning the government "should be doing a great deal more" regarding climate change, 4 meaning "is doing the right amount," and 7 meaning "should be doing a great deal less."
 
 ![](figs/gov_warming.pdf){width="75%" align="center"}
+
+The graph shows that respondents who believed that the government should be doing more to combat climate change were more likely to support Clinton, while voters who believed the government should be doing less about it were more likely to support Trump.
 
 In the next figure, we sought to understand how the perception of racial advantages or disadvantages affected a voter's candidate of choice in 2016. Respondents were asked to represent their opinions using a scale of 1 to 7, with 1 meaning white people generally have a "large advantage" compared to other groups, 4 meaning "it does not make any difference," and 7 meaning white people are at a "large disadvantage" compared to other groups.
 
 ![](figs/racial_adv.pdf){width="75%" align="center"}
 
+The graph above shows that people who believed that white people have advantages over other groups tended to favor Clinton, while people who believed that white people are disadvantaged tended to favor Trump. The neutral group in this case (respondents who did not believe white people had any racial advantage or disadvantage) also leaned towards Trump.
+
 Finally, we looked at the relationship between respondents' views on immigration numbers and their candidates of choice in the 2016 election. Respondents were asked to express their opinions on a scale of 1 to 7, with 1 meaning the number of legal immigrants allowed into the United States should be "increased a lot," 4 meaning "kept the same," and 7 meaning "decreased a lot."
 
 ![](figs/immig_opin.pdf){width="75%" align="center"}
 
-We can also use our findings to predict an individual's candidate choice based on their responses to the questions. To do this, we can use a binary representation of possible candidate choices (with 0 representing a vote for Clinton and 1 representing a vote for Trump, and ignoring other responses for the purposes of this analysis) and use statistical methods to generate a value between 0 and 1 for any combination of responses to the four questions. A reasonable threshold to use for this prediction would be 0.5, meaning that if a respondent is assigned a value below 0.5 based on their responses they would be expected to vote for Clinton, and if they receive a value above 0.5 they would be expected to vote for Trump.
+The figure above illustrates a tendency for respondents who supported higher numbers of legal immigrants to support Clinton, and a tendency for respondents who wanted lower numbers of legal immigrants to support Trump.
+
+We can use our findings from the data analysis to predict an individual's candidate choice based on their responses to the questions. To do this, we can use a binary representation of possible candidate choices (with 0 representing a vote for Clinton and 1 representing a vote for Trump, and ignoring other responses for the purposes of this analysis) and use statistical methods to generate a predictive value between 0 and 1 for any combination of responses to the four questions. A reasonable threshold to use for this prediction would be 0.5, meaning that if a respondent is assigned a value below 0.5 based on their responses they would be expected to vote for Clinton, and if they receive a value above 0.5 they would be expected to vote for Trump.
 
 We were curious about this predictive method's accuracy when tested on the ANES respondents' data. To investigate this, we selected the 187 survey respondents who had answered all four political opinion questions as well as their candidate choice, and generated predictive values for them based on their political opinion responses. We then compared their predicted candidate choices (determined by whether their values were above or below 0.5) with their true reported candidate choices. Our predictions were correct for 83.42% of the 187 respondents.
 
