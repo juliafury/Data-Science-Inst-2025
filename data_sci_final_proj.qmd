@@ -87,7 +87,7 @@ Graphing Each Variable
 
 ## 4 Results and Analysis
 
-![](figs/econ_opin.pdf){width="57%" align="center"}
+![](figs/econ_opin.pdf){width="75%" align="center"}
 
 ![](figs/gov_warming.pdf){width="75%" align="center"}
 
