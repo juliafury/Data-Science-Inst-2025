@@ -14,32 +14,13 @@ vote2016 <- factor(vote2016,
 white_adv <- anes_data$wad4b
 white_adv <- ifelse(white_adv == 9, NA, white_adv)
 
-impute_mode <- function(x) {
-  mode_val <- as.numeric(names(sort(table(x), decreasing = TRUE)[1]))
-  ifelse(is.na(x), mode_val, x)
-}
-
-white_adv <- impute_mode(white_adv)
-vote2016 <- factor(impute_mode(as.numeric(vote2016)),
-                   levels = c(1, 2, 3, 4),
-                   labels = c("Clinton", "Trump", "Someone Else", "Probably Not Voting"))
-
-impute_mean <- function(x) {
-  mean_val <- mean(x, na.rm = TRUE)
-  ifelse(is.na(x), mean_val, x)
-}
-
-warmdo <- impute_mean(anes_data$warmdo)
-immig_numb <- impute_mean(anes_data$immig_numb)
-econnow <- impute_mean(anes_data$econnow)
-
 anes_data$vote2016 <- vote2016
 anes_data$white_adv <- white_adv
-anes_data$warmdo <- warmdo
-anes_data$immig_numb <- immig_numb
-anes_data$econnow <- econnow
 
-ggplot(anes_data, aes(x = factor(white_adv, exclude = NULL))) +
+anes_data_clean <- anes_data %>%
+  filter(!is.na(vote2016) & !is.na(white_adv))
+
+ggplot(anes_data_clean, aes(x = factor(white_adv, exclude = NULL))) +
   geom_bar(fill = "darkgreen") +
   labs(
     title = "Distribution of Responses on White Advantage/Disadvantage",
@@ -48,7 +29,7 @@ ggplot(anes_data, aes(x = factor(white_adv, exclude = NULL))) +
   ) +
   theme_minimal()
 
-ggplot(anes_data, aes(x = factor(white_adv), fill = factor(vote2016))) +
+ggplot(anes_data_clean, aes(x = factor(white_adv), fill = factor(vote2016))) +
   geom_bar() +
   labs(
     title = "Relationship between 2016 Vote and Views on Racial Advantage/Disadvantage",
@@ -58,7 +39,12 @@ ggplot(anes_data, aes(x = factor(white_adv), fill = factor(vote2016))) +
   ) +
   theme_minimal()
 
-ggplot(anes_data, aes(x = factor(warmdo, exclude = NULL))) +
+warmdo <- anes_data$warmdo
+
+anes_data_clean <- anes_data %>%
+  filter(!is.na(vote2016) & !is.na(warmdo))
+
+ggplot(anes_data_clean, aes(x = factor(warmdo, exclude = NULL))) +
   geom_bar(fill = "orange") +
   labs(
     title = "The Federal Government Should Do More/Less About Global Warming",
@@ -67,7 +53,7 @@ ggplot(anes_data, aes(x = factor(warmdo, exclude = NULL))) +
   ) +
   theme_minimal()
 
-ggplot(anes_data, aes(x = factor(warmdo), fill = factor(vote2016))) +  
+ggplot(anes_data_clean, aes(x = factor(warmdo), fill = factor(vote2016))) +  
   geom_bar() +
   labs(
     title = "Relationship between 2016 Vote and Views on Global Warming and the Federal Government",
@@ -77,7 +63,12 @@ ggplot(anes_data, aes(x = factor(warmdo), fill = factor(vote2016))) +
   ) +
   theme_minimal()
 
-ggplot(anes_data, aes(x = factor(immig_numb, exclude = NULL))) +
+immig_numb <- anes_data$immig_numb
+
+anes_data_clean <- anes_data %>%
+  filter(!is.na(vote2016) & !is.na(immig_numb))
+
+ggplot(anes_data_clean, aes(x = factor(immig_numb, exclude = NULL))) +
   geom_bar(fill = "red") +
   labs(
     title = "Public Opinion Immigration Numbers (2016)",
@@ -86,7 +77,7 @@ ggplot(anes_data, aes(x = factor(immig_numb, exclude = NULL))) +
   ) +
   theme_minimal()
 
-ggplot(anes_data, aes(x = factor(immig_numb), fill = factor(vote2016))) +
+ggplot(anes_data_clean, aes(x = factor(immig_numb), fill = factor(vote2016))) +
   geom_bar() +
   labs(
     title = "Relationship between 2016 Vote and Public Opinion Immigration Numbers",
@@ -96,7 +87,12 @@ ggplot(anes_data, aes(x = factor(immig_numb), fill = factor(vote2016))) +
   ) +
   theme_minimal()
 
-ggplot(anes_data, aes(x = factor(econnow, exclude = NULL))) +
+econnow <- anes_data$econnow
+
+anes_data_clean <- anes_data %>%
+  filter(!is.na(vote2016) & !is.na(econnow))
+
+ggplot(anes_data_clean, aes(x = factor(econnow, exclude = NULL))) +
   geom_bar(fill = "purple") +
   labs(
     title = "Views on Economy",
@@ -105,7 +101,7 @@ ggplot(anes_data, aes(x = factor(econnow, exclude = NULL))) +
   ) +
   theme_minimal()
 
-ggplot(anes_data, aes(x = factor(econnow), fill = factor(vote2016))) +
+ggplot(anes_data_clean, aes(x = factor(econnow), fill = factor(vote2016))) +
   geom_bar() +
   labs(
     title = "Relationship between 2016 Vote and Views on Economy",
@@ -114,4 +110,5 @@ ggplot(anes_data, aes(x = factor(econnow), fill = factor(vote2016))) +
     fill = "Vote in 2016"
   ) +
   theme_minimal()
+
 
