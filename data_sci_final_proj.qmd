@@ -1,5 +1,5 @@
 ---
-title: "SPA-420 Final Project"
+title: "Investigating Predictors of 2016 Presidential Voting Behavior"
 authors: Jeffrie Chambers IV, Julia Fury, Meera Swaminathan
 date: 2025-01-10
 format: pdf
