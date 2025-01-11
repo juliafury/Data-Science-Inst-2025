@@ -32,6 +32,37 @@ Trump can attribute his win in 2016 to many complex issues, and differing belief
 
 ## 3 Data and Methods
 
+We utilize data from the ANES 2016 Pilot Study which had a survey of 1,200 respondents between January 22 and 28, 2016. From this data we identified four variables that we hypothesize will demonstrate a correlation between a voter position on social/political issues and their preferred candidate and cleaned and graphed using R Studio to reflect the data of just the responses and the data of their responses with who they voted for. These variables include: Perception of the economy at the time of the survey compared to a year prior, opinion about the federal government's role in addressing climate change, perception of radical advantage or disadvantage held by white people, and opinion on immigration numbers.
+
+Setting up the R Environment and Data Processing
+
+We first set up our R environment before cleaning and processing our data. This is done by loading the libraries "here", "tidyverse", "dplyr", and "ggplot2". These libraries allow for data manipulation, analysis, visualization, and replication. 
+
+We then load ANES 2016 Pilot Study into R studio by using the command "anes_data <- read_csv(here("data", "anes_pilot_2016.csv"))". Next, we prepare the 2016 vote choice variable extracting the variable, replacing missing values, and transforming to a factor through the following code:
+
+vote2016 <- anes_data$vote16dt
+vote2016 <- ifelse(vote2016 == 9, NA, vote2016)
+vote2016 <- factor(vote2016, 
+                   levels = c(1, 2, 3, 4),
+                   labels = c("Clinton", "Trump", "Someone Else", "Probably Not Voting"))
+                  
+
+We then move onto data cleaning for the four variables: 
+
+Economy Compared to One Year Ago
+
+In order to prepare the "Economy Compared to One Year Ago" data for visualization, we extract the economic perception variable using "econnow <- anes_data$econnow" and we filter the data using: 
+
+"anes_data_clean <- anes_data %>%
+    filter(!is.na(vote2016) & !is.na(econnow))". This command excludes NA variables from our data. 
+    
+The Federal Government Should Be Doing More/less about Rising Temperatures
+
+In order to prepare the "The Federal Government Should Be Doing More/less about Rising Temperatures" data for visualization, we extract the economic perception variable using "warmdo <- anes_data$warmdo" and we filter the data using: 
+
+anes_data_clean <- anes_data %>%
+  filter(!is.na(vote2016) & !is.na(warmdo)) This command excludes NA variables from our data.
+
 ## 4 Results and Analysis
 
 ![](figs/econ_opin.pdf){width="57%" align="center"}
