@@ -19,7 +19,6 @@ format:
 institute:
   - American University
   - Data Science Inst 2025
-# bibliography: "main.bib"
 ---
 
 ```{r}
@@ -32,6 +31,14 @@ institute:
 library(here)
 library(tidyverse)
 ```
+# Table of Contents
+- Introduction
+- Variables We Examined
+- Economics Comparison
+- Global Warming / Climate
+- Racial Advantages / Disadvanteges
+- Immigration
+
 
 # Introduction
 
@@ -53,10 +60,12 @@ library(tidyverse)
 ## Variables We Examined
 
 The central variable in our analysis was the respondents' candidates of choice for the 2016 Presidential election. Respondents' answers to this question were analyzed alongside the four other variables we tracked:
+
 - Perception of the economy at the time of the survey compared to a year prior
 - Opinion about the federal government's role in addressing climate change
 - Perception of racial advantage or disadvantage held by white people
 - Opinion on immigration numbers
+
 While there were many variables related to respondents' economic, environmental, racial, and immigration-related positions, we chose to graph one variable from each category that seemed the most representative.
 
 ***
@@ -98,6 +107,11 @@ In this analysis, we sought to understand how respondents' views on immigration 
 ![](figs/immig_opin.pdf){width=75% align="center"}
 
 ***
+# Bibliography
+
+American National Election Studies (ANES). ANES 2016 Pilot Study: Study Overview. National Science Foundation, 2016. Data collected by YouGov. Accessed https://electionstudies.org/data-center/anes-2016-pilot-study/.
+
+***
 
 \huge
 
@@ -118,10 +132,7 @@ Thanks!
 
 \quad
 
-\vspace{5mm}
-_Journal of Public Policy_  
-\hspace{3.5cm} @mooganmin22
 
-## References {.allowframebreaks}
+##  {.allowframebreaks}
 
 \footnotesize
