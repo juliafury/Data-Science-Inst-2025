@@ -60,7 +60,7 @@ ggplot(anes_data_clean, aes(x = factor(warmdo), fill = factor(vote2016))) +
   geom_bar() +
   labs(
     title = "Relationship between 2016 Vote and Opinion on Federal Government's
-    Responsibility to Address Global Warming",
+    Role in Addressing Global Warming",
     x = "Opinion on Government Action About Global Warming",
     y = "Count",
     fill = "Vote in 2016"
