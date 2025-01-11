@@ -89,11 +89,19 @@ We use bar charts and stacked bar charts using ggplot2 and geom_bar to visualize
 
 ## 4 Results and Analysis
 
-![](figs/econ_opin.pdf){width="57%" align="center"}
+One relationship we sought to analyze was the connection between respondents' views on the economy and their candidates of choice in the 2016 election. We generated the graph below to visualize this data. A response of 1 indicates that a respondent believed that the economy was "much better" than it had been a year earlier, 3 represents the belief that the economy was "about the same," and 5 expresses that a respondent believed the economy was "much worse."
+
+![](figs/econ_opin.pdf){width="75%" align="center"}
+
+We also explored how respondents' views on the federal government's responsibility to address global warming were related to their candidates of choice. The figure below graphs voters' responses in which they were asked to describe their opinions on the issue on a scale of 1 to 7, with 1 meaning the government "should be doing a great deal more" regarding climate change, 4 meaning "is doing the right amount," and 7 meaning "should be doing a great deal less."
 
 ![](figs/gov_warming.pdf){width="75%" align="center"}
 
+In the next figure, we sought to understand how the perception of racial advantages or disadvantages affected a voter's candidate of choice in 2016. Respondents were asked to represent their opinions using a scale of 1 to 7, with 1 meaning white people generally have a "large advantage" compared to other groups, 4 meaning "it does not make any difference," and 7 meaning white people are at a "large disadvantage" compared to other groups.
+
 ![](figs/racial_adv.pdf){width="75%" align="center"}
+
+Finally, we looked at the relationship between respondents' views on immigration numbers and their candidates of choice in the 2016 election. Respondents were asked to express their opinions on a scale of 1 to 7, with 1 meaning the number of legal immigrants allowed into the United States should be "increased a lot," 4 meaning "kept the same," and 7 meaning "decreased a lot."
 
 ![](figs/immig_opin.pdf){width="75%" align="center"}
 
