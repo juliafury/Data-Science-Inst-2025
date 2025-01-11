@@ -29,15 +29,17 @@ ggplot(anes_data_clean, aes(x = factor(white_adv, exclude = NULL))) +
   ) +
   theme_minimal()
 
+pdf(here("figs", "racial_adv.pdf"))
 ggplot(anes_data_clean, aes(x = factor(white_adv), fill = factor(vote2016))) +
   geom_bar() +
   labs(
     title = "Relationship between 2016 Vote and Views on Racial Advantage/Disadvantage",
-    x = "Views",
+    x = "Perception of White Advantage/Disadvantage",
     y = "Count",
     fill = "Vote in 2016"
   ) +
   theme_minimal()
+dev.off()
 
 warmdo <- anes_data$warmdo
 
@@ -48,20 +50,23 @@ ggplot(anes_data_clean, aes(x = factor(warmdo, exclude = NULL))) +
   geom_bar(fill = "orange") +
   labs(
     title = "The Federal Government Should Do More/Less About Global Warming",
-    x = "Responses",
+    x = "Response",
     y = "Count"
   ) +
   theme_minimal()
 
+pdf(here("figs", "gov_warming.pdf"))
 ggplot(anes_data_clean, aes(x = factor(warmdo), fill = factor(vote2016))) +  
   geom_bar() +
   labs(
-    title = "Relationship between 2016 Vote and Views on Global Warming and the Federal Government",
-    x = "Federal Government Should Do More About Global Warming",
+    title = "Relationship between 2016 Vote and Opinion on Federal Government's
+    Responsibility to Address Global Warming",
+    x = "Opinion on Government Action About Global Warming",
     y = "Count",
     fill = "Vote in 2016"
   ) +
   theme_minimal()
+dev.off()
 
 immig_numb <- anes_data$immig_numb
 
@@ -71,21 +76,23 @@ anes_data_clean <- anes_data %>%
 ggplot(anes_data_clean, aes(x = factor(immig_numb, exclude = NULL))) +
   geom_bar(fill = "red") +
   labs(
-    title = "Public Opinion Immigration Numbers (2016)",
+    title = "Respondents' Opinions on Immigration Numbers",
     x = "Responses",
     y = "Count"
   ) +
   theme_minimal()
 
+pdf(here("figs", "immig_opin.pdf"))
 ggplot(anes_data_clean, aes(x = factor(immig_numb), fill = factor(vote2016))) +
   geom_bar() +
   labs(
-    title = "Relationship between 2016 Vote and Public Opinion Immigration Numbers",
-    x = "Public Opinions",
+    title = "Relationship between 2016 Vote and Respondents' Opinions on Immigration Numbers",
+    x = "Opinion on Immigration Numbers",
     y = "Count",
     fill = "Vote in 2016"
   ) +
   theme_minimal()
+dev.off()
 
 econnow <- anes_data$econnow
 
@@ -95,20 +102,22 @@ anes_data_clean <- anes_data %>%
 ggplot(anes_data_clean, aes(x = factor(econnow, exclude = NULL))) +
   geom_bar(fill = "purple") +
   labs(
-    title = "Views on Economy",
+    title = "Views on Economy Compared To A Year Earlier",
     x = "Responses",
     y = "Count"
   ) +
   theme_minimal()
 
+pdf(here("figs", "econ_opin.pdf"))
 ggplot(anes_data_clean, aes(x = factor(econnow), fill = factor(vote2016))) +
   geom_bar() +
   labs(
     title = "Relationship between 2016 Vote and Views on Economy",
-    x = "Views on Economy",
+    x = "View on Economy Compared To A Year Earlier",
     y = "Count",
     fill = "Vote in 2016"
   ) +
   theme_minimal()
+dev.off()
 
 
